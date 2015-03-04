@@ -85,6 +85,12 @@ gem 'omniauth-flickr', '>= 0.0.15'
 gem "elasticsearch-model"
 gem "elasticsearch-rails"
 
+# Paperclip for file attachments
+gem 'paperclip', '~> 4.2'
+
+# AWS for S3 storage
+gem 'aws-sdk', '~> 1.5.7'
+
 gem 'rake', '>= 10.0.0'
 
 group :production, :staging do
