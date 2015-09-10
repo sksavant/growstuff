@@ -17,3 +17,8 @@
 %div.pagination
   = page_entries_info @members, :model => "members"
   = will_paginate @members
+
+  %ul.list-inline
+    %li The data on this page is available in the following formats:
+    %li= link_to "JSON", members_path(:format => 'json', :sort => @sort)
+    %li= link_to "RSS", members_path(:format => 'rss', :sort => @sort)
