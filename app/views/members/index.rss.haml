@@ -2,7 +2,7 @@
 %rss{:version => 2.0}
   %channel
     %title
-      Recent members (#{ENV['GROWSTUFF_SITE_NAME']})
+      #{@sort=='recently_joined' ? 'Recent' : 'Alphabetical'} members (#{ENV['GROWSTUFF_SITE_NAME']})
     %link= members_url
     - @members.each do |member|
       %item
