@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+%rss{:version => 2.0}
+  %channel
+    %title
+      Recent members (#{ENV['GROWSTUFF_SITE_NAME']})
+    %link= members_url
+    - @members.each do |member|
+      %item
+        %title #{member.login_name} joined
+        %pubDate= member.created_at.to_s(:rfc822)
+        %description
+          #{member.login_name} has #{[pluralize(member.gardens.size, "garden"), pluralize(member.plantings.size, "planting"), pluralize(member.seeds.size, "seed")].join(", ")}
+        %link= member_url(member)
+        %guid= member_url(member)

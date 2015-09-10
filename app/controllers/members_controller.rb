@@ -16,6 +16,7 @@ class MembersController < ApplicationController
     respond_to do |format|
       format.html # index.html.haml
       format.json { render :json => @members.to_json(:only => [:id, :login_name, :slug, :bio, :created_at, :location, :latitude, :longitude]) }
+      format.rss { render :layout => false } #index.rss.builder
     end
   end
 
